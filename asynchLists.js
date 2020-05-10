@@ -50,6 +50,47 @@ getTodos('luigi.json').then(data => {
 });
 
 
+// fetch API
+
+fetch('luigi.json').then((response) => {
+    // console.log('resolved', response);
+    return response.json();
+}).then(data => {
+    console.log('fetch resolved', data);
+}).catch((err) => {
+    console.log('rejected', err);
+});
+
+// async & await
+
+const getTodos2 = async () => {
+    
+    const response1 = await fetch('luigis.json');
+
+    if(response1.status !== 200){
+        throw new Error('cannot fetch the data');
+    };
+
+    const data1 = await response1.json();
+    console.log('await 1 resolved', data1);
+    const response2 = await fetch('mario.json');
+    const data2 = await response2.json();
+    console.log('await 2 resolved', data2);
+    const response3 = await fetch('shaun.json');
+    const data3 = await response3.json();
+    console.log('await 3 resolved', data3);
+
+    return data1;
+};
+
+getTodos2()
+    .then(data => console.log('advanced await resolved:', data))
+    .catch(err => console.log('advanced await rejected:', err.message));
+
+
+
+// ****************************** OLDER NOTES ******************************
+
 // console.log(1);
 // console.log(2);
 
