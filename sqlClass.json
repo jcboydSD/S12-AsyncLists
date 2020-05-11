@@ -1,0 +1,5 @@
+[
+    { "topic": "learn filters, found in chapter 6", "course": "SQL Class" },
+    { "topic": "learn joins, found in chapters 8-9", "course": "SQL Class" },
+    { "topic": "learn subqueries, found in chapter 11", "course": "SQL Class" }
+]
