@@ -10,7 +10,7 @@ const getTodos = async (resource) => {
     };
     const data = await response.json();
     formatTodos(data);
-    console.log('promise resolved:', data);
+    console.log(`promise ${data[0].author} resolved:`, data);
     return todosNewContent;  // return html formatted content
 };
 
